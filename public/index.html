@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Remote Control</title>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <h1>TV Remote Control</h1>
+    <form id="connect-form">
+        <label for="remote">Select Remote:</label>
+        <select id="remote" name="remote" required></select>
+        <button type="submit">Connect</button>
+    </form>
+    <div id="control-buttons" style="display:none;">
+        <button onclick="sendCommand('power')">Power</button>
+        <button onclick="sendCommand('volume_up')">Volume Up</button>
+        <button onclick="sendCommand('volume_down')">Volume Down</button>
+        <button onclick="sendCommand('channel_up')">Channel Up</button>
+        <button onclick="sendCommand('channel_down')">Channel Down</button>
+    </div>
+    <div>
+        <button onclick="discoverTVs()">Discover TVs</button>
+        <div id="tv-list"></div>
+        <button onclick="connectToTV()">Connect to Selected TV</button>
+        <button onclick="sendTVCommand('KEY_PLAY')">Play</button>
+        <button onclick="sendTVCommand('KEY_PAUSE')">Pause</button>
+        <button onclick="wakeOnLan('00:11:22:33:44:55')">Wake TV</button>
+    </div>
+</body>
+</html>
+
